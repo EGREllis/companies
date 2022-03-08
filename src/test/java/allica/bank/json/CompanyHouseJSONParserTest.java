@@ -12,6 +12,6 @@ public class CompanyHouseJSONParserTest {
         Company result = parser.parseJSON(JSON);
 
         assert result != null;
-        assert result.getCompany_name().equals("MARINE AND GENERAL MUTUAL LIFE ASSURANCE SOCIETY");
+        assert result.getCompanyName().equals("MARINE AND GENERAL MUTUAL LIFE ASSURANCE SOCIETY");
     }
 }

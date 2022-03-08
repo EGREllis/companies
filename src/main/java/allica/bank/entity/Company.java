@@ -1,5 +1,6 @@
 package allica.bank.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -10,24 +11,36 @@ import java.util.List;
 
 @Data
 public class Company {
-
-    private Long company_number;
-    private Date date_of_creation;
-    private Date last_full_members_list_date;
+    @JsonProperty("company_number")
+    private Long companyNumber;
+    @JsonProperty("date_of_creation")
+    private Date dateOfCreation;
+    @JsonProperty("last_full_members_list_date")
+    private Date lastFullMembersListDate;
     private String type;
     private String jurisdiction;
-    private String company_name;
+    @JsonProperty("company_name")
+    private String companyName;
 
-    private Address registered_office_address;
+    @JsonProperty("registered_office_address")
+    private Address registeredOfficeAddress;
     private Accounts accounts;
-    private List<Long> sic_codes;
-    private boolean undeliverable_registered_office_address;
-    private boolean has_insolvency_history;
-    private String company_status;
+    @JsonProperty("sic_codes")
+    private List<Long> sicCodes;
+    @JsonProperty("undeliverable_registered_office_address")
+    private boolean undeliverableRegisteredOfficeAddress;
+    @JsonProperty("has_insolvency_history")
+    private boolean hasInsolvencyHistory;
+    @JsonProperty("company_status")
+    private String companyStatus;
     private String etag;
-    private boolean has_charges;
-    private boolean registered_office_is_in_dispute;
-    private Date date_of_cessation;
-    private boolean can_file;
+    @JsonProperty("has_charges")
+    private boolean hasCharges;
+    @JsonProperty("registered_office_is_in_dispute")
+    private boolean registeredOfficeIsInDispute;
+    @JsonProperty("date_of_cessation")
+    private Date dateOfCessation;
+    @JsonProperty("can_file")
+    private boolean canFile;
     private Links links;
 }
